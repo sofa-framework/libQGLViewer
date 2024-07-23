@@ -96,8 +96,8 @@ int PrimitivePositioning::computeRelativePosition(const Polygone *P,const Segmen
 
 	for(unsigned int j=0;j<intersections.size();++j)
 	{
-		tmin = std::min(tmin,intersections[j]) ;
-		tmax = std::max(tmax,intersections[j]) ;
+		tmin = min(tmin,intersections[j]) ;
+		tmax = max(tmax,intersections[j]) ;
 	}
 
 	if(tmax - tmin < 2*_EPS)
@@ -227,8 +227,8 @@ bool PrimitivePositioning::pointOutOfPolygon_XY(const Vector3& P,const Polygone 
 
 		double Z = (q1-p)^(q2-p) ;
 
-		MinZ = std::min(Z,MinZ) ;
-		MaxZ = std::max(Z,MaxZ) ;
+		MinZ = min(Z,MinZ) ;
+		MaxZ = max(Z,MaxZ) ;
 	}
 
 	if((MaxZ <= -I_EPS*I_EPS)||(MinZ >= I_EPS*I_EPS))	// the point is inside the polygon
@@ -308,8 +308,8 @@ bool PrimitivePositioning::intersectSegments_XY(const Vector2& P1,const Vector2&
 			return false ;
 		}
 
-		double tPQM = std::max(tP1,tQ1) ;
-		double tPQm = std::min(tP1,tQ1) ;
+		double tPQM = max(tP1,tQ1) ;
+		double tPQm = min(tP1,tQ1) ;
 
 		if(( tPQM < -I_EPS) || (tPQm > 1.0+I_EPS))
 			return false ;

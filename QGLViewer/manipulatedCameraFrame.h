@@ -25,7 +25,7 @@ namespace qglviewer {
   See the <a href="../mouse.html">mouse page</a> for a description of the
   possible actions that can be performed using the mouse and their bindings.
   \nosubgrouping */
-class QGLVIEWER_EXPORT ManipulatedCameraFrame : public ManipulatedFrame {
+class QGLVIEWER_EXPORT ManipulatedCameraFrame : public qglviewer::ManipulatedFrame {
 #ifndef DOXYGEN
   friend class Camera;
   friend class ::QGLViewer;

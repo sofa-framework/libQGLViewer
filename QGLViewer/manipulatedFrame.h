@@ -77,7 +77,7 @@ namespace qglviewer {
   button while moving the mouse fast enough (see spinningSensitivity()). See
   also translationSensitivity() and rotationSensitivity() for sensitivity
   tuning. \nosubgrouping */
-class QGLVIEWER_EXPORT ManipulatedFrame : public Frame, public MouseGrabber {
+class QGLVIEWER_EXPORT ManipulatedFrame : public qglviewer::Frame, public MouseGrabber {
 #ifndef DOXYGEN
   friend class Camera;
   friend class ::QGLViewer;
