@@ -17,72 +17,72 @@ elseif (Qt6Core_FOUND)
 endif()
 
 set(MOC_HEADER_FILES
-    camera.h
-    frame.h
-    keyFrameInterpolator.h
-    manipulatedCameraFrame.h
-    manipulatedFrame.h
-    qglviewer.h
+    QGLViewer/camera.h
+    QGLViewer/frame.h
+    QGLViewer/keyFrameInterpolator.h
+    QGLViewer/manipulatedCameraFrame.h
+    QGLViewer/manipulatedFrame.h
+    QGLViewer/qglviewer.h
     )
 # These header files don't need to be processed by the moc.
 set(HEADER_FILES
-    VRender/AxisAlignedBox.h
-    VRender/Exporter.h
-    VRender/NVector3.h
-    VRender/Optimizer.h
-    VRender/ParserGL.h
-    VRender/Primitive.h
-    VRender/PrimitivePositioning.h
-    VRender/SortMethod.h
-    VRender/Types.h
-    VRender/VRender.h
-    VRender/Vector2.h
-    VRender/Vector3.h
-    VRender/gpc.h
-    config.h
-    constraint.h
-    domUtils.h
-    mouseGrabber.h
-    quaternion.h
-    vec.h
-    camera.h
-    frame.h
-    keyFrameInterpolator.h
-    manipulatedCameraFrame.h
-    manipulatedFrame.h
-    qglviewer.h
+    QGLViewer/VRender/AxisAlignedBox.h
+    QGLViewer/VRender/Exporter.h
+    QGLViewer/VRender/NVector3.h
+    QGLViewer/VRender/Optimizer.h
+    QGLViewer/VRender/ParserGL.h
+    QGLViewer/VRender/Primitive.h
+    QGLViewer/VRender/PrimitivePositioning.h
+    QGLViewer/VRender/SortMethod.h
+    QGLViewer/VRender/Types.h
+    QGLViewer/VRender/VRender.h
+    QGLViewer/VRender/Vector2.h
+    QGLViewer/VRender/Vector3.h
+    QGLViewer/VRender/gpc.h
+    QGLViewer/config.h
+    QGLViewer/constraint.h
+    QGLViewer/domUtils.h
+    QGLViewer/mouseGrabber.h
+    QGLViewer/quaternion.h
+    QGLViewer/vec.h
+    QGLViewer/camera.h
+    QGLViewer/frame.h
+    QGLViewer/keyFrameInterpolator.h
+    QGLViewer/manipulatedCameraFrame.h
+    QGLViewer/manipulatedFrame.h
+    QGLViewer/qglviewer.h
     )
 set(SOURCE_FILES
-    VRender/BSPSortMethod.cpp
-    VRender/BackFaceCullingOptimizer.cpp
-    VRender/EPSExporter.cpp
-    VRender/Exporter.cpp
-    VRender/FIGExporter.cpp
-    VRender/NVector3.cpp
-    VRender/ParserGL.cpp
-    VRender/Primitive.cpp
-    VRender/PrimitivePositioning.cpp
-    VRender/TopologicalSortMethod.cpp
-    VRender/VRender.cpp
-    VRender/Vector2.cpp
-    VRender/Vector3.cpp
-    VRender/VisibilityOptimizer.cpp
-    VRender/gpc.cpp
-    camera.cpp
-    constraint.cpp
-    frame.cpp
-    keyFrameInterpolator.cpp
-    manipulatedCameraFrame.cpp
-    manipulatedFrame.cpp
-    mouseGrabber.cpp
-    qglviewer.cpp
-    quaternion.cpp
-    saveSnapshot.cpp
-    vec.cpp
+    QGLViewer/VRender/BSPSortMethod.cpp
+    QGLViewer/VRender/BackFaceCullingOptimizer.cpp
+    QGLViewer/VRender/EPSExporter.cpp
+    QGLViewer/VRender/Exporter.cpp
+    QGLViewer/VRender/FIGExporter.cpp
+    QGLViewer/VRender/NVector3.cpp
+    QGLViewer/VRender/ParserGL.cpp
+    QGLViewer/VRender/Primitive.cpp
+    QGLViewer/VRender/PrimitivePositioning.cpp
+    QGLViewer/VRender/TopologicalSortMethod.cpp
+    QGLViewer/VRender/VRender.cpp
+    QGLViewer/VRender/Vector2.cpp
+    QGLViewer/VRender/Vector3.cpp
+    QGLViewer/VRender/VisibilityOptimizer.cpp
+    QGLViewer/VRender/gpc.cpp
+    QGLViewer/camera.cpp
+    QGLViewer/constraint.cpp
+    QGLViewer/frame.cpp
+    QGLViewer/keyFrameInterpolator.cpp
+    QGLViewer/manipulatedCameraFrame.cpp
+    QGLViewer/manipulatedFrame.cpp
+    QGLViewer/mouseGrabber.cpp
+    QGLViewer/qglviewer.cpp
+    QGLViewer/quaternion.cpp
+    QGLViewer/saveSnapshot.cpp
+    QGLViewer/vec.cpp
     )
 set(UI_FILES
-    ImageInterface.ui
-    VRenderInterface.ui
+    QGLViewer/ImageInterface.ui
+    QGLViewer/VRenderInterface.ui
     )
 
 if (Qt5Core_FOUND)
@@ -105,7 +105,7 @@ else()
 endif()
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
-target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>")
+target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>")
 target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC "$<INSTALL_INTERFACE:include/extlibs/${PROJECT_NAME}>")
 
 if(WIN32)
