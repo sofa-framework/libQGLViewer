@@ -16,6 +16,10 @@ elseif (Qt6Core_FOUND)
     set(QGLViewer_QT_TARGETS ${QGLViewer_QT_TARGETS} Qt::Core Qt::Gui Qt::Widgets Qt::OpenGLWidgets Qt::Xml)
 endif()
 
+if(NOT TARGET OpenGL::GL OR NOT TARGET OpenGL::GLU)
+    find_package(OpenGL REQUIRED)
+endif()
+
 set(MOC_HEADER_FILES
     QGLViewer/camera.h
     QGLViewer/frame.h
